@@ -1,0 +1,296 @@
+/* ========================================
+   ZAIA Healthcare - Responsive Design
+   ======================================== */
+
+/* ====== TABLET (768px - 991px) ====== */
+@media (max-width: 991px) {
+    /* Typography */
+    :root {
+        --font-hero-title: 40px;
+        --font-section-title: 28px;
+        --font-subtitle: 18px;
+        --padding-section-vertical: 60px;
+        --padding-section-horizontal: 40px;
+    }
+
+    /* Header */
+    .header-container {
+        padding: 0 var(--padding-section-horizontal);
+    }
+
+    /* Hero */
+    .hero-container {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 60px 40px;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .service-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+}
+
+/* ====== MOBILE (< 768px) ====== */
+@media (max-width: 767px) {
+    /* Typography */
+    :root {
+        --font-hero-title: 32px;
+        --font-section-title: 24px;
+        --font-subtitle: 16px;
+        --font-body: 14px;
+        --padding-section-vertical: 50px;
+        --padding-section-horizontal: 20px;
+    }
+
+    /* ====== HEADER ====== */
+    .header {
+        height: 70px;
+    }
+
+    .header-container {
+        padding: 0 20px;
+    }
+
+    /* Logo */
+    .logo-symbol svg {
+        width: 35px;
+        height: 45px;
+    }
+
+    .logo-name {
+        font-size: 24px;
+    }
+
+    .logo-subtitle {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation Mobile */
+    .nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 20px;
+        gap: 25px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: right var(--transition-normal);
+        z-index: var(--z-mobile-menu);
+    }
+
+    .nav.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+    }
+
+    .nav .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+        margin-top: 70px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-image {
+        order: 1;
+        min-height: 300px;
+    }
+
+    .hero-content {
+        order: 2;
+        padding: 50px 30px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 30px;
+    }
+
+    /* ====== APPROACH ====== */
+    .approach {
+        padding: 50px 20px;
+    }
+
+    .approach-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .approach-text {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    /* ====== SERVICES ====== */
+    .services {
+        padding: 50px 20px;
+    }
+
+    .services-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-card:last-child {
+        grid-column: 1;
+        max-width: 100%;
+    }
+
+    .service-image {
+        max-width: 350px;
+        margin: 0 auto 20px;
+    }
+
+    /* ====== CTA ====== */
+    .cta {
+        padding: 60px 30px;
+    }
+
+    .cta-title {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-left {
+        width: 100%;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-copyright {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-link {
+        margin-left: 0;
+    }
+
+    .footer-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-brand {
+        font-size: 16px;
+    }
+
+    .footer-company {
+        font-size: 13px;
+    }
+
+    .footer-address,
+    .footer-contact {
+        font-size: 12px;
+    }
+}
+
+/* ====== SMALL MOBILE (< 480px) ====== */
+@media (max-width: 479px) {
+    :root {
+        --font-hero-title: 28px;
+        --font-section-title: 22px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-content {
+        padding: 40px 25px;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+
+    .services-title {
+        font-size: 22px;
+    }
+
+    .cta-title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+}
