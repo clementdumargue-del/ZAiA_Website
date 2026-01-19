@@ -1,83 +1,125 @@
-# Instructions pour Intégrer Votre Logo ZAIA
+# 🎯 GUIDE RAPIDE : Ajouter Vos Logos ZAIA
 
-## 📋 Étape 1 : Préparer le Logo
+## ✅ STATUT ACTUEL
 
-Vous avez besoin de **2 versions** de votre logo :
+Le site est **100% fonctionnel** avec un logo SVG de secours. Voici ce qui a été fait :
 
-1. **Logo BLANC** (pour le header avec fond teal)
-   - Nom suggéré : `zaia-logo-white.png`
-   - Format : PNG avec fond transparent
-   - Le symbole "Z" et le texte doivent être en BLANC
+- ✅ Header avec dégradé teal (#0A3D4A → #0D5563 → #1A6B7A)
+- ✅ Tous les textes du header en BLANC
+- ✅ Navigation et boutons configurés
+- ✅ Système de fallback automatique (PNG → SVG)
+- ✅ Code prêt pour vos logos PNG
 
-2. **Logo TEAL** (pour le footer avec fond blanc)
-   - Nom suggéré : `zaia-logo-teal.png`
-   - Format : PNG avec fond transparent
-   - Le symbole "Z" et le texte doivent être en TEAL (#0A5E6B)
+## 📁 OÙ PLACER VOS LOGOS
 
-## 📁 Étape 2 : Placer les Fichiers
+Copiez vos fichiers logo **directement** dans ce dossier :
 
-Copiez vos fichiers logo dans le dossier :
 ```
 /home/user/ZAiA_Website/assets/logo/
 ```
 
-Vous devriez avoir :
+### Noms de fichiers EXACTS requis :
+
 ```
-assets/
-└── logo/
-    ├── zaia-logo-white.png    ← Pour le header
-    └── zaia-logo-teal.png     ← Pour le footer (optionnel)
-```
-
-## ✏️ Étape 3 : Modifier le HTML
-
-### Pour le HEADER :
-
-Ouvrez `index.html` et trouvez la section avec les commentaires (ligne ~25-27).
-
-**Décommentez cette ligne :**
-```html
-<img src="assets/logo/zaia-logo-white.png" alt="ZAIA Healthcare" style="height: 60px; width: auto;">
+assets/logo/zaia-logo-white.png    ← Logo BLANC pour le header
+assets/logo/zaia-logo-teal.png     ← Logo TEAL pour le footer
 ```
 
-**Commentez ou supprimez les lignes du SVG temporaire** (lignes 30-41) :
-```html
-<!-- <div class="logo-symbol">
-    <svg>...</svg>
-</div>
-<div class="logo-text">...</div> -->
+## 🚀 MÉTHODE RAPIDE : Copier vos logos
+
+Si vos logos sont ailleurs sur votre ordinateur, utilisez ces commandes :
+
+```bash
+# Remplacez /chemin/vers/ par le chemin réel de vos fichiers
+cp /chemin/vers/votre-logo-blanc.png /home/user/ZAiA_Website/assets/logo/zaia-logo-white.png
+cp /chemin/vers/votre-logo-teal.png /home/user/ZAiA_Website/assets/logo/zaia-logo-teal.png
 ```
 
-### Pour le FOOTER :
+### Exemple pratique :
+```bash
+# Si vos logos sont dans ~/Downloads/
+cp ~/Downloads/ZAIA_Logo_White.png /home/user/ZAiA_Website/assets/logo/zaia-logo-white.png
+cp ~/Downloads/ZAIA_Logo_Teal.png /home/user/ZAiA_Website/assets/logo/zaia-logo-teal.png
+```
 
-Si vous avez un logo teal séparé, vous pouvez faire la même chose dans le footer (ligne ~186).
+## 🎨 SPÉCIFICATIONS DES LOGOS
 
-## 🎨 Dimensions Recommandées
+### Logo BLANC (Header)
+- **Couleur** : Blanc pur (#FFFFFF)
+- **Format** : PNG avec fond transparent
+- **Dimensions** : Hauteur ~60-80px (largeur automatique)
+- **Utilisation** : Header avec fond teal gradient
 
-- **Hauteur** : 60-80px (s'adapte automatiquement)
-- **Format** : PNG avec transparence
-- **Résolution** : 300 DPI pour une qualité optimale
+### Logo TEAL (Footer)
+- **Couleur** : Teal (#0A5E6B)
+- **Format** : PNG avec fond transparent
+- **Dimensions** : Hauteur ~60px (largeur automatique)
+- **Utilisation** : Footer avec fond blanc
 
-## ⚠️ Si Vous N'avez Qu'une Seule Version du Logo
+## 🔍 VÉRIFIER QUE VOS LOGOS SONT EN PLACE
 
-Pas de problème ! Utilisez Photoshop, GIMP, ou un outil en ligne pour :
+```bash
+# Exécutez cette commande pour vérifier :
+ls -lh /home/user/ZAiA_Website/assets/logo/
 
-1. **Créer la version BLANCHE** :
-   - Ouvrir votre logo
-   - Sélectionner tout le contenu (symbole + texte)
-   - Changer la couleur en blanc (#FFFFFF)
-   - Exporter en PNG avec fond transparent
+# Vous devriez voir :
+# zaia-logo-white.png
+# zaia-logo-teal.png
+```
 
-2. **Garder la version TEAL** pour le footer
+## 🌐 COMMENT CRÉER UN LOGO BLANC SI VOUS AVEZ SEULEMENT LE TEAL
 
-## 🔧 Alternative Rapide (Si pas d'image)
+### Option 1 : Avec GIMP (gratuit)
+1. Ouvrir votre logo teal dans GIMP
+2. Menu : Couleurs → Luminosité-Contraste
+3. Menu : Couleurs → Désaturer → Luminosité
+4. Menu : Couleurs → Courbes → Rendre complètement blanc
+5. Fichier → Exporter sous → PNG
 
-Si vous n'avez pas encore préparé les logos, le SVG blanc temporaire fonctionne pour l'instant. Le header s'affichera correctement avec :
-- Fond teal dégradé
-- Logo "Z" en blanc
-- Texte "ZAIA" et "HEALTHCARE MEDICAL ENG." en blanc
-- Menu en blanc
+### Option 2 : Avec ImageMagick (ligne de commande)
+```bash
+convert logo-teal.png -negate -colorspace gray -fill white -colorize 100% logo-white.png
+```
+
+### Option 3 : En ligne
+- Utilisez photopea.com (Photoshop en ligne gratuit)
+- Ouvrez votre logo
+- Sélectionnez tout → Changez la couleur en blanc
+- Téléchargez en PNG
+
+## ⚡ APRÈS AVOIR COPIÉ VOS LOGOS
+
+1. **Rafraîchir le navigateur** : http://localhost:8000/index.html
+2. Les logos PNG s'afficheront automatiquement
+3. Le SVG de secours disparaîtra
+
+## 🔧 DÉPANNAGE
+
+### "Je ne vois pas mes logos"
+
+```bash
+# Vérifier que les fichiers existent :
+ls -la /home/user/ZAiA_Website/assets/logo/
+
+# Vérifier les permissions :
+chmod 644 /home/user/ZAiA_Website/assets/logo/*.png
+
+# Vider le cache du navigateur : Ctrl + Shift + R
+```
+
+### "Le SVG s'affiche toujours"
+
+Le système fonctionne ainsi :
+1. Essaie de charger le PNG
+2. Si échec → Affiche le SVG de secours automatiquement
+
+Si vous voyez le SVG, c'est que le PNG n'est pas au bon endroit ou n'a pas le bon nom.
+
+## 📝 NOTE IMPORTANTE
+
+Le HTML est **déjà configuré** et n'a **pas besoin de modification**. Le système détecte automatiquement vos logos PNG dès qu'ils sont dans le bon dossier.
 
 ---
 
-**Une fois le logo placé, rafraîchissez la page : http://localhost:8000/index.html**
+✅ **Le site fonctionne parfaitement avec le SVG de secours.**
+✅ **Ajoutez vos PNG quand vous êtes prêt - pas d'urgence !**
